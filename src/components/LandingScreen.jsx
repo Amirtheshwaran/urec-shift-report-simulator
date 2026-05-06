@@ -1,22 +1,10 @@
 import { useState } from 'react'
 
-const PRESET_NAMES = ['Alex', 'Jordan', 'Taylor', 'Morgan', 'Riley', 'Casey']
-
 export default function LandingScreen({ onStart }) {
-  const [name, setName] = useState('')
-  const [selected, setSelected] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
 
-  const activeName = name.trim() || selected
-
-  function handleChip(n) {
-    setSelected(n)
-    setName('')
-  }
-
-  function handleInput(e) {
-    setName(e.target.value)
-    if (e.target.value.trim()) setSelected('')
-  }
+  const valid = firstName.trim().length >= 2 && lastName.trim().length >= 2
 
   return (
     <div className="landing" id="landing-screen">
@@ -31,33 +19,35 @@ export default function LandingScreen({ onStart }) {
       </p>
       <div className="landing-card">
         <h2>Who's training today?</h2>
-        <div className="name-grid">
-          {PRESET_NAMES.map(n => (
-            <button
-              key={n}
-              className={`name-chip${selected === n ? ' selected' : ''}`}
-              onClick={() => handleChip(n)}
-              type="button"
-            >
-              {n}
-            </button>
-          ))}
+        <div className="form-group" style={{ marginBottom: 14 }}>
+          <label className="form-label">First Name<span className="required">*</span></label>
+          <input
+            className="form-input"
+            type="text"
+            placeholder="Enter your first name"
+            value={firstName}
+            onChange={e => setFirstName(e.target.value)}
+            maxLength={40}
+            id="first-name-input"
+          />
         </div>
-        <div className="name-divider">or type your name</div>
-        <input
-          className="form-input"
-          type="text"
-          placeholder="Enter your name..."
-          value={name}
-          onChange={handleInput}
-          maxLength={40}
-          id="trainee-name-input"
-        />
+        <div className="form-group" style={{ marginBottom: 0 }}>
+          <label className="form-label">Last Name<span className="required">*</span></label>
+          <input
+            className="form-input"
+            type="text"
+            placeholder="Enter your last name"
+            value={lastName}
+            onChange={e => setLastName(e.target.value)}
+            maxLength={40}
+            id="last-name-input"
+          />
+        </div>
         <button
           className="btn btn-primary btn-lg"
           style={{ width: '100%', marginTop: 20 }}
-          disabled={!activeName}
-          onClick={() => onStart(activeName)}
+          disabled={!valid}
+          onClick={() => onStart(`${firstName.trim()} ${lastName.trim()}`)}
           id="start-btn"
         >
           Start Training →
