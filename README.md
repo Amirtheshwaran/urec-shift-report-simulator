@@ -11,7 +11,7 @@ A professional, web-based training tool for UREC staff to practice writing shift
 
 ## ✨ Features
 
-- **12 Randomized Scenarios** — 4 per facility (Student Rec Center, Outdoor Adventures Center, Aquatic Center) across Opening, Closing, and Mid-Shift types
+- **12 Randomized Scenarios** — 4 per facility (NRFC, Hayes Field Complex, Belk Gym) across Opening, Closing, and Mid-Shift types
 - **Realistic Desk Clues** — Observations that mirror real-world situations staff encounter during shifts
 - **Dynamic Shift Report Form** — Mirrors actual Connect2 report structure with summary, maintenance, equipment, patron interaction, and follow-up sections
 - **AI-Powered Grading** — Gemini 2.0 Flash evaluates reports on completeness, specificity, tone, action items, and form usage (scored 1–100)

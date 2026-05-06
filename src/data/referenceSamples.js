@@ -1,24 +1,23 @@
 /**
- * Reference report samples — one per facility/shift combo for dev reference.
- * These show what a strong shift report should look like.
+ * Reference report samples — model answers for NRFC, Hayes, and Belk Gym.
  */
 
 const referenceSamples = {
-  'SRC-Opening': {
+  'NRFC-Opening': {
     summary:
-      'Opened SRC at 6:00 AM. Completed full walkthrough — all doors unlocked and lights operational by 6:05. Found standing water near shower drains in men\'s locker room; placed caution signs and submitted maintenance work order #2847. Treadmill #7 has an Out of Order sign not logged in previous closing report — tagged and documented for follow-up with fitness coordinator. Retrieved 2 voicemails regarding a lost blue Hydro Flask; checked lost and found (not located), noted for follow-up with member. Opening checklist completed on time.',
+      'Opened NRFC at 3:00 PM. Completed full field walkthrough — found a 3-foot torn turf seam on Field 2 near the north goal; placed cones around the area and submitted maintenance work order #3201. Field lights were left on overnight from a previous event; turned off and restarted for tonight\'s schedule. Equipment checkout inventory: all 40 cones missing from shed — documented and emailed IM coordinator. Retrieved voicemail from IM coordinator regarding flag football bracket changes for tonight\'s games — relayed to referees on duty. Fields 1, 3, 4 open for play. Opening checklist completed on time.',
   },
-  'SRC-Closing': {
+  'NRFC-Closing': {
     summary:
-      'Closed SRC at 11:00 PM. During final rounds, encountered 3 students on Court B refusing to leave, claiming a midnight reservation. Verified with booking system — no reservation found. Explained policy courteously; students left by 11:15. Weight room required re-racking (15lb, 25lb, 35lb dumbbells). Smoothie bar blenders left unwashed — cleaned and notified smoothie bar supervisor via email. Building fully cleared by 11:20 PM. All doors locked, alarm set.',
+      'Closed NRFC at 10:00 PM after intramural soccer. Encountered group of students on Field 3 claiming Sport Club reservation until 11 PM — verified schedule, no reservation found. Explained policy courteously; students left by 10:10 PM. Equipment checkout: 2 pinnie sets (yellow + green) and 1 ball pump missing — documented discrepancy and emailed supervisor. Portable restroom near Field 1 out of toilet paper and hand sanitizer — submitted facilities request. All fields clear, lights off, shed locked by 10:20 PM.',
   },
-  'OAC-Opening': {
+  'Hayes-Opening': {
     summary:
-      'Opened OAC at 9:00 AM. Gear inspection found climbing harness #14 with frayed stitching on belay loop — immediately pulled from service and tagged for repair/replacement. Bikes #3, #8, #11 returned with flat tires; moved to repair queue. Unconfirmed reservation for Campus Outdoors Club (10 kayak paddles at 11:00 AM) — called club president to confirm, reservation locked in. All other rental gear accounted for and in good condition.',
+      'Opened Hayes Field Complex at 4:00 PM. Walkthrough found broken glass debris on synthetic turf near east sideline — fully cleaned by 4:20 PM before rugby club arrival. Field A sprinkler head broken, spraying water across walkway — shut off valve and submitted work order #2918. Found unlabeled lacrosse equipment in storage shed from women\'s lacrosse club, not in checkout system — set aside and emailed Sport Clubs coordinator for follow-up. Rugby club arrived at 4:30 PM, turf field ready on time. Opening checklist completed.',
   },
-  'AC-Opening': {
+  'Belk-Opening': {
     summary:
-      'Opened Aquatic Center at 6:00 AM. Pool temp reading 76°F, below target range (78-82°F). Adjusted heater settings and notified aquatics coordinator. Lane dividers tangled in lanes 3 and 4 — fixed before 6:20 AM. Swim team coach arrived at 6:00 AM; communicated 20-minute delay for lane setup. Previous shift\'s chemical log page missing from binder — noted and reported to supervisor for follow-up. AED on Stand #2 showing low battery — replacement battery requested through maintenance.',
+      'Opened Belk Gym at 7:00 AM. Court 1 had wet spot near free throw line from overnight roof leak — mopped, placed caution cones, submitted maintenance request. Pool temp reading 76°F (below target 78-82°F) — adjusted heater settings and notified aquatics coordinator. Men\'s locker room shower drain clogged with standing water — submitted work order. Retrieved voicemail: afternoon lifeguard (1-5 PM) called out — relayed to aquatics coordinator for coverage. AED unit near pool entrance showing low battery — replacement requested. 4 lap swimmers waiting in lobby — communicated 7:15 AM pool open. Opening checklist completed.',
   },
 }
 
