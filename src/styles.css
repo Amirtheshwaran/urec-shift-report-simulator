@@ -153,6 +153,7 @@ input, select, textarea { font-family: inherit; }
   border-radius: var(--radius-lg);
   padding: 28px;
   box-shadow: var(--shadow);
+  animation: fadeSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .card + .card { margin-top: 20px; }
 .card-header {
@@ -299,16 +300,18 @@ input, select, textarea { font-family: inherit; }
   padding: 11px 22px;
   border-radius: var(--radius);
   border: none;
-  transition: all 0.2s;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   letter-spacing: 0.01em;
   text-decoration: none;
+}
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
 }
 .btn-primary {
   background: var(--teal);
   color: #fff;
 }
 .btn-primary:hover { background: var(--teal-dim); transform: translateY(-1px); box-shadow: 0 4px 16px var(--teal-glow); }
-.btn-primary:active { transform: translateY(0); }
 .btn-secondary {
   background: transparent;
   color: var(--teal);
@@ -364,6 +367,7 @@ input, select, textarea { font-family: inherit; }
   text-align: center;
   line-height: 1.2;
   margin-bottom: 12px;
+  animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .landing-title span { color: var(--teal); }
 .landing-subtitle {
@@ -373,6 +377,8 @@ input, select, textarea { font-family: inherit; }
   max-width: 480px;
   margin-bottom: 40px;
   line-height: 1.7;
+  opacity: 0;
+  animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
 }
 .landing-card {
   background: var(--bg-card);
@@ -382,6 +388,8 @@ input, select, textarea { font-family: inherit; }
   width: 100%;
   max-width: 480px;
   box-shadow: var(--shadow);
+  opacity: 0;
+  animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 .landing-card h2 {
   font-size: 15px;
@@ -680,6 +688,17 @@ input, select, textarea { font-family: inherit; }
 }
 .ref-panel summary:hover { color: var(--text-dim); }
 .ref-panel-body { margin-top: 14px; }
+
+/* ─── Animations ─── */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 /* ─── Responsive ─── */
 @media (max-width: 600px) {
