@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import LandingScreen from './components/LandingScreen'
 import ScenarioCard from './components/ScenarioCard'
 import DeskClueCard from './components/DeskClueCard'
@@ -15,6 +15,15 @@ export default function App() {
   const [scenario, setScenario] = useState(null)
   const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [theme, setTheme] = useState('light')
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
+
+  const toggleTheme = useCallback(() => {
+    setTheme(t => t === 'light' ? 'dark' : 'light')
+  }, [])
 
   const handleStart = useCallback((name) => {
     setTraineeName(name)
@@ -53,7 +62,14 @@ export default function App() {
 
   // Landing screen is full-page (no shell)
   if (step === 0) {
-    return <LandingScreen onStart={handleStart} />
+    return (
+      <>
+        <LandingScreen onStart={handleStart} />
+        <button className="theme-toggle-fab" onClick={toggleTheme} aria-label="Toggle theme">
+          {theme === 'light' ? '🌙' : '☀️'}
+        </button>
+      </>
+    )
   }
 
   return (
@@ -122,6 +138,10 @@ export default function App() {
           )}
         </div>
       </main>
+
+      <button className="theme-toggle-fab" onClick={toggleTheme} aria-label="Toggle theme">
+        {theme === 'light' ? '🌙' : '☀️'}
+      </button>
     </div>
   )
 }
