@@ -1,22 +1,23 @@
 /* ─── Design Tokens ─── */
 :root {
-  --bg: #111416;
-  --bg-card: #1a1e23;
-  --bg-input: #12161a;
-  --border: #2a3040;
-  --border-focus: #0ea5c5;
-  --teal: #0ea5c5;
-  --teal-dim: #0c8fab;
-  --teal-glow: rgba(14,165,197,0.15);
-  --text: #e8edf2;
-  --text-dim: #8a9ab0;
-  --text-muted: #4d5f75;
-  --danger: #e05c6a;
-  --success: #2dd4a0;
-  --warning: #f0a84e;
+  --bg: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --border: #e5e7eb;
+  --border-focus: #005035;
+  --teal: #005035;
+  --teal-dim: #003b27;
+  --teal-glow: rgba(0, 80, 53, 0.1);
+  --niner-gold: #A49665;
+  --text: #111827;
+  --text-dim: #4b5563;
+  --text-muted: #6b7280;
+  --danger: #ef4444;
+  --success: #10b981;
+  --warning: #f59e0b;
   --radius: 10px;
   --radius-lg: 16px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
 /* ─── Reset ─── */
@@ -49,7 +50,7 @@ input, select, textarea { font-family: inherit; }
 
 /* ─── Top Bar ─── */
 .topbar {
-  background: #0d1015;
+  background: var(--teal);
   border-bottom: 1px solid var(--border);
   padding: 12px 0;
   position: sticky;
@@ -68,8 +69,8 @@ input, select, textarea { font-family: inherit; }
   gap: 10px;
 }
 .logo-badge {
-  background: var(--teal);
-  color: #000;
+  background: var(--niner-gold);
+  color: #fff;
   font-weight: 700;
   font-size: 11px;
   letter-spacing: 0.08em;
@@ -80,17 +81,17 @@ input, select, textarea { font-family: inherit; }
 .topbar-title {
   font-size: 14px;
   font-weight: 600;
-  color: var(--text);
+  color: #ffffff;
   letter-spacing: 0.01em;
 }
 .topbar-trainee {
   font-size: 12px;
-  color: var(--text-dim);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* ─── Step Progress ─── */
 .step-bar {
-  background: #0d1015;
+  background: #ffffff;
   border-bottom: 1px solid var(--border);
   padding: 10px 0;
 }
@@ -135,8 +136,8 @@ input, select, textarea { font-family: inherit; }
   color: var(--text-muted);
   flex-shrink: 0;
 }
-.step-item.active .step-num { background: var(--teal); color: #000; }
-.step-item.done .step-num { background: var(--success); color: #000; }
+.step-item.active .step-num { background: var(--teal); color: #fff; }
+.step-item.done .step-num { background: var(--success); color: #fff; }
 .step-connector { width: 20px; height: 1px; background: var(--border); flex-shrink: 0; }
 
 /* ─── Main Content ─── */
@@ -304,9 +305,9 @@ input, select, textarea { font-family: inherit; }
 }
 .btn-primary {
   background: var(--teal);
-  color: #000;
+  color: #fff;
 }
-.btn-primary:hover { background: var(--teal-dim); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(14,165,197,0.35); }
+.btn-primary:hover { background: var(--teal-dim); transform: translateY(-1px); box-shadow: 0 4px 16px var(--teal-glow); }
 .btn-primary:active { transform: translateY(0); }
 .btn-secondary {
   background: transparent;
@@ -339,7 +340,7 @@ input, select, textarea { font-family: inherit; }
   align-items: center;
   justify-content: center;
   padding: 32px 16px;
-  background: radial-gradient(ellipse at top, #0d1f2b 0%, var(--bg) 60%);
+  background: radial-gradient(ellipse at top, #e5e7eb 0%, var(--bg) 60%);
 }
 .landing-logo {
   display: flex;
@@ -348,8 +349,8 @@ input, select, textarea { font-family: inherit; }
   margin-bottom: 32px;
 }
 .landing-badge {
-  background: var(--teal);
-  color: #000;
+  background: var(--niner-gold);
+  color: #fff;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -516,8 +517,8 @@ input, select, textarea { font-family: inherit; }
 
 /* ─── Shift Report Form ─── */
 .form-header {
-  background: linear-gradient(135deg, #0d1f2b 0%, #111820 100%);
-  border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dim) 100%);
+  border: 1px solid var(--teal-dim);
   border-radius: var(--radius-lg);
   padding: 20px 24px;
   margin-bottom: 20px;
@@ -527,8 +528,8 @@ input, select, textarea { font-family: inherit; }
   gap: 16px;
   flex-wrap: wrap;
 }
-.form-header-title { font-size: 16px; font-weight: 700; }
-.form-header-meta { font-size: 12px; color: var(--text-dim); }
+.form-header-title { font-size: 16px; font-weight: 700; color: #ffffff; }
+.form-header-meta { font-size: 12px; color: rgba(255, 255, 255, 0.85); }
 .validation-banner {
   background: rgba(224,92,106,0.1);
   border: 1px solid rgba(224,92,106,0.3);
@@ -662,8 +663,8 @@ input, select, textarea { font-family: inherit; }
 
 /* ─── Reference Panel ─── */
 .ref-panel {
-  background: #0b0e12;
-  border: 1px solid #1a2030;
+  background: #f9fafb;
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
   margin-bottom: 20px;
